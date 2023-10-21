@@ -1,0 +1,18 @@
+ /******************************************************************************
+ *
+ * Module: HC-SR04 Ultrasonic
+ *
+ * File Name: ultrasonic.h
+ *
+ * Description: Header file for the ultrasonic driver
+ *
+ * Author: Kareem Abd El-Moneam
+ *
+ *******************************************************************************/
+
+#ifndef ULTRASONIC_H_
+#define ULTRASONIC_H_
+
+
+
+#endif /* ULTRASONIC_H_ */

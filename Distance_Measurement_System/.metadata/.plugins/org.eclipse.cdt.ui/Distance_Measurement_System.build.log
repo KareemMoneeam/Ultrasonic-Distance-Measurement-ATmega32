@@ -1,0 +1,34 @@
+16:27:18 **** Incremental Build of configuration Debug for project Distance_Measurement_System ****
+make all 
+Building file: ../Distance_Measurement.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Distance_Measurement.d" -MT"Distance_Measurement.o" -c -o "Distance_Measurement.o" "../Distance_Measurement.c"
+Finished building: ../Distance_Measurement.c
+ 
+Building target: Distance_Measurement_System.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Distance_Measurement_System.map -mmcu=atmega32 -o "Distance_Measurement_System.elf"  ./Distance_Measurement.o ./gpio.o ./icu.o ./lcd.o ./ultrasonic.o   
+Finished building target: Distance_Measurement_System.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Distance_Measurement_System.elf  >"Distance_Measurement_System.lss"
+Finished building: Distance_Measurement_System.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Distance_Measurement_System.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8984 bytes (27.4% Full)
+(.text + .data + .bootloader)
+
+Data:         29 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:27:19 Build Finished. 0 errors, 0 warnings. (took 765ms)
+

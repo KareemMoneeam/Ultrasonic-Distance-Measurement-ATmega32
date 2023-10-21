@@ -1,0 +1,35 @@
+ /******************************************************************************
+ *
+ * File Name: Distance_Measurement.c
+ *
+ * Description: source file for the Application "Distance Measurement System"
+ *
+ * Author: Kareem Abd El-Moneam
+ *
+ *******************************************************************************/
+#include "std_types.h"
+#include "ultrasonic.h"
+#include "lcd.h"
+#include "gpio.h"
+#include "avr/io.h"
+
+int main(void)
+{
+	uint16 distance = 0;
+	/* Initialize the ultrasonic driver using ICU driver */
+	Ultrasonic_init();
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+	/* Read the calculated distance value using ultrasonic */
+	distance = Ultrasonic_readDistance();
+	/* Initialize the LCD Driver */
+	LCD_init();
+	/* Displaying the ultrasonic o/p on the LCD*/
+	while(1)
+	{
+		LCD_displayString("Distance = ");
+		LCD_intgerToString(distance);
+		LCD_displayString("cm");
+
+	}
+}

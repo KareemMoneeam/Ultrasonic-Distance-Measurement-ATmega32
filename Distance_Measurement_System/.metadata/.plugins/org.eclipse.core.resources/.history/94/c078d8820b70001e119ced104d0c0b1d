@@ -1,0 +1,34 @@
+ /******************************************************************************
+ *
+ * File Name: Distance_Measurement.c
+ *
+ * Description: source file for the Application "Distance Measurement System"
+ *
+ * Author: Kareem Abd El-Moneam
+ *
+ *******************************************************************************/
+#include "std_types.h"
+#include "ultrasonic.h"
+#include "lcd.h"
+#include "gpio.h"
+#include "avr/io.h"
+
+int main(void)
+{
+	uint32 dutyCycle = 0;
+
+	/* Create configuration structure for ICU driver */
+	Ultrasonic_init();
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+
+	/* Set the Call back function pointer in the ICU driver */
+	ICU_setCallBack(APP_edgeProcessing);
+
+	/* Initialize both the LCD and ICU driver */
+	LCD_init();
+	while(1)
+	{
+
+	}
+}
